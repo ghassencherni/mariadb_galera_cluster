@@ -15,6 +15,7 @@ To run mysql in master and slave replication :
   2. Download the repo from github or use git to clone it in your home directory: git clone https://github.com/ghassencherni/ultratendency.git
   3. Move to the downloaded repo : cd ultratendency
   4. Add the host IP in the "hosts.ini" file and put the path of its pem key ( generated from the pvk.ppk ) 
+  5. Run the command: #ansible-playbook deploy_mariadb.yml -i hosts.ini -v -u ultratendency#
 
 ## How to test the deploy :
 
