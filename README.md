@@ -9,7 +9,7 @@ Ansible Role to deploy MariaDB on Centos7, backup the database and delete backup
 
 ## Getting Started
 
-To run mysql in master and slave replication :
+To run MariaDB deployement :
 
   1. Install Ansible on your machine
   
@@ -28,6 +28,9 @@ To run mysql in master and slave replication :
   5. Run the command: 
      
      ansible-playbook deploy_mariadb.yml -i hosts.ini -v -u ultratendency
+
+> Note: You can add many hosts in order to install several mariadb instances, just add the IPs in the hosts.ini and specify the SSH key of each one.
+
 
 
 
