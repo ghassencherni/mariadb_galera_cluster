@@ -1,5 +1,6 @@
 ---
 # vars file for ultratendency_mariadb
-#
 
-mysql_root_password: mypass
+mariadb_root_password: mypass
+backup_dir: /opt/backup
+scripts_dir: /root

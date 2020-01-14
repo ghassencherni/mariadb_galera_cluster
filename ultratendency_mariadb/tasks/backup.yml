@@ -1,0 +1,17 @@
+---
+
+- name: Create backup directory if not present
+  become: yes
+  file:
+    path: "{{ backup_dir }}"
+    recurse: yes
+    state: directory
+
+
+#This cron will first delete backup file older than 5 days and will backup the entire database
+- name: Cron mariadb backup
+  become: yes
+  template:
+    src: mariadb-backup.j2
+    dest: /etc/cron.daily/mariadb-backup
+    mode: 0755

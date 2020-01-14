@@ -1,0 +1,7 @@
+
+
+#Remove file older than 5 days
+find {{ backup_dir }} -type f -mtime +5 -exec rm -f {} \;
+
+#Backup the entire database
+mysqldump --all-databases --single-transaction --quick --lock-tables=false > {{ backup_dir }}/full-backup-$(date +%F).sql -u root -p{{ mariadb_root_password }}
