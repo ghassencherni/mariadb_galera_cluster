@@ -1,11 +1,12 @@
 # ultratendency_mariadb
 Ansible Role to deploy MariaDB on Centos7, backup the database and delete backup files older than 5 days
+You can run the playbook in the same machine where you want to install MariaDB or from another machine ( ex: Ansible Master node )
 
 
 
 ## Requirements
 
-- Ansible must be installed on the machine where you will run the script ( it can be remotely from another node of on the same host where you want to install MariaDB ) : You can use the "init.sh" script located inside this repository, it will install Ansible for you on your Centos7 machine.
+- Ansible must be installed on the machine where you will run the script : You can use the "init.sh" script located inside this repository, it will install Ansible for you on your Centos7 machine.
 
 ## Getting Started
 
@@ -47,7 +48,7 @@ To run MariaDB deployement :
 
 
 
-> Note: You can add many hosts in order to install several mariadb instances, just add the IPs in the hosts.ini and specify the SSH key of each one.
+> Note: You can add many hosts in order to install several mariadb instances ( HA configuration case ), just add the IPs in the hosts.ini and specify the SSH key of each one.
 
 
 
