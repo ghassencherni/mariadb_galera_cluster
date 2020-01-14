@@ -5,29 +5,47 @@ Ansible Role to deploy MariaDB on Centos7, backup the database and delete backup
 
 ## Requirements
 
-- Ansible must be installed on the machine where you will run the script ( it can be remotely from another node of where you want to install MariaDB )
+- Ansible must be installed on the machine where you will run the script ( it can be remotely from another node of on the same host where you want to install MariaDB ) : You can use the "init.sh" script located inside this repository, it will install Ansible for you on your Centos7 machine.
 
 ## Getting Started
 
 To run MariaDB deployement :
 
-  1. Install Ansible on your machine
   
-  2. Download the repo from github or use git to clone it in your home directory: 
+  1. Download the repo from github or use git to clone it in your home directory: 
+
 
      git clone https://github.com/ghassencherni/ultratendency.git
   
   
-  3. Move to the downloaded repo : 
+
+  2. Move to the downloaded repo : 
+
 
      cd ultratendency
   
+
+
+  3. Install Ansible on your machine : you can use the "init.sh" script inside the repository
+    
+     chmod +x init.sh
+
+     ./init.sh
   
+  
+
   4. Add the host IP in the "hosts.ini" file and put the path of its pem key ( generated from the pvk.ppk ) 
+
+
+> Note: It's mandatory to change the permission of your pem file to 600: chmod 600 your_key.pem 
+ 
   
   5. Run the command: 
      
+
      ansible-playbook deploy_mariadb.yml -i hosts.ini -v -u ultratendency
+
+
 
 > Note: You can add many hosts in order to install several mariadb instances, just add the IPs in the hosts.ini and specify the SSH key of each one.
 
