@@ -12,6 +12,9 @@
 - name: Copy the Mariadb conf with Galera conf
   template: src="server.cnf.j2" dest="/etc/my.cnf.d/server.cnf"
 
+  
+- name: start and enable firewalld
+  service: name=firewalld state=started enabled=true
 
 # Ports used by Galera Cluster
 # 3306 For MariaDB client connections and State Snapshot Transfer that use the mysqldump method

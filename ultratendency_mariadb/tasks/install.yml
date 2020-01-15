@@ -1,6 +1,11 @@
 ---
 # tasks file for ultratendency_mariadb
 
+
+# Change MariaDB version from default 5.X to 10.1 Centos 7.7
+- name: Add Mariadb 10.X repo
+  copy: src="MariaDB.repo" dest="/etc/yum.repos.d/MariaDB.repo"
+
 - name: install MariaDB server
   yum: name=mariadb-server state=present
 
