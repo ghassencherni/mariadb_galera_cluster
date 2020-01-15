@@ -38,7 +38,8 @@ To run MariaDB deployement :
   4. Add the host IP in the "hosts.ini" file and put the path of its pem key ( generated from the pvk.ppk ) 
 
 
-> Note: It's mandatory to change the permission of your pem file to 600: chmod 600 your_key.pem 
+> Note: It's mandatory to change the permission of your pem file to 600: chmod 600 your_key.pem, 
+        You can convert you ppk key to pem using this command : puttygen my.ppk -O private-openssh -o my.key
  
   
   5. Run the command: 
