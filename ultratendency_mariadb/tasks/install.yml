@@ -1,7 +1,6 @@
 ---
 # tasks file for ultratendency_mariadb
 
-# The version of the MariaDB server provided in default CentOS repositories is version 5.5
 - name: install MariaDB server
   yum: name=mariadb-server state=present
 

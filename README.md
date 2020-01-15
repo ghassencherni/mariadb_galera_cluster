@@ -1,5 +1,5 @@
 # ultratendency_mariadb
-Ansible Role to deploy MariaDB on Centos7, backup the database and delete backup files older than 5 days
+Ansible Role to deploy MariaDB on Centos7, configure Galera Cluster, backup the database and delete backup files older than 5 days
 You can run the playbook in the same machine where you want to install MariaDB or from another machine ( ex: Ansible Master node )
 
 
@@ -56,9 +56,21 @@ To run MariaDB deployement :
 ## How to test the deploy :
 
    1. Connect to your target machine using SSH
+
    2. Check that you are able to connect to you Mariadb server: "mysql -u root -p$PASSWORD"
+
    3. Check that the backup directory is created: ls /opt/backup
+
    4. check that the cron job is created: cat /etc/cron.daily/mariadb-backup
+
+   5. check that your cluster is working properly:
+      
+      - Connect to your databse and put the root pssword already difined : mysql -u root -p
+      
+      - Run the sql command : SHOW STATUS LIKE 'wsrep_cluster_size'; 
+ 
+      => The expected Value is the number of servers added on your galera conf "wsrep_cluster_address" ( equal to 1 if you have only one node ) 
+
 
 
 ## Variables
