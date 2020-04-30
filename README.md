@@ -16,7 +16,7 @@ To run MariaDB deployement :
   1. Download the repo from github or use git to clone it in your home directory: 
 
 
-     git clone https://github.com/ghassencherni/ultratendency.git
+     git clone https://github.com/ghassencherni/mariadb_galera_cluster.git
   
   
 
