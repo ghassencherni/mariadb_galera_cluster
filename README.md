@@ -1,4 +1,4 @@
-# ultratendency_mariadb
+# mariadb_galera_cluster
 Ansible Role to deploy MariaDB on Centos7, configure Galera Cluster, backup the database and delete backup files older than 5 days
 You can run the playbook in the same machine where you want to install MariaDB or from another machine ( ex: Ansible Master node )
 
